@@ -1,6 +1,6 @@
 # UI Generation Director
 
-A Codex skill for producing cleaner, higher-fidelity UI with a Magic Patterns / v0-style workflow: real design-system context, component reuse, visual inspection, focused polish passes, and interaction previews.
+A Codex skill for producing cleaner, higher-fidelity UI with a Magic Patterns / v0-style workflow plus Apple Human Interface Guidelines: real design-system context, component reuse, task-first UX decisions, visual inspection, focused polish passes, and interaction previews.
 
 ## What it adds
 
@@ -10,6 +10,7 @@ A Codex skill for producing cleaner, higher-fidelity UI with a Magic Patterns / 
 - Focused Inspiration / Polish / Debug modes
 - Animated GIF previews for real UI interactions
 - Guidance based on public Magic Patterns and v0 architecture research
+- Apple HIG-based UX guidance for hierarchy, agency, feedback, touch targets, menus, typography, writing, motion, accessibility, and recovery
 
 ## Install
 
@@ -54,6 +55,8 @@ See [references/interaction-preview.md](references/interaction-preview.md) for t
 ## Research basis
 
 The skill reproduces publicly observable ideas around Magic Patterns and v0 rather than claiming access to private prompts. The supporting sources and architectural notes are in [references/research.md](references/research.md).
+
+Apple UX guidance is based on current public Human Interface Guidelines and Apple design sessions. See [references/apple-hig-ux.md](references/apple-hig-ux.md).
 
 ## License
 
