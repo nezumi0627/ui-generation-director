@@ -19,6 +19,8 @@ For CSS transitions around 150-300 ms, a frame every 60-100 ms is usually enough
 
 Prefer 5-20 meaningful frames over recording a long full-screen video. Keep the cursor out of the crop unless pointer location is necessary to understand the interaction.
 
+When small text, thin borders, blur, or shadows need to stay crisp, capture above the final delivery resolution instead of recording directly at GIF size. A browser device scale factor around 2x-3x is often enough. Downsample once with a high-quality filter such as Lanczos after capture; avoid repeated resizing between stages.
+
 If the flow has a reversible action, a useful sequence is:
 
 ```text
@@ -49,5 +51,8 @@ Before sharing the GIF, verify that:
 - The action and visual response are both visible.
 - The viewport, crop, and scale stay stable.
 - Text remains readable after GIF quantization.
+- Fine borders, rounded corners, blur, and shadows do not break into noisy bands after downsampling or palette conversion.
 - The loop does not create a confusing jump; use a longer final-frame hold when needed.
 - The GIF demonstrates the shipped UI behavior rather than an invented preview-only effect.
+
+If Pillow output shows obvious banding or unstable colors, prefer an ffmpeg palette pass when available: generate one palette from the full frame sequence, then encode with `paletteuse`. This is especially useful for dark UIs, subtle gradients, translucent panels, and soft shadows. Keep the Pillow helper as a portable fallback when ffmpeg is unavailable.
