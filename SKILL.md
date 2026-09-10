@@ -53,6 +53,8 @@ For a new screen or meaningful redesign:
 
 Prefer incremental edits over regenerating an entire surface after every prompt. Preserve working structure while changing the smallest layer that explains the visual problem.
 
+When elevation is part of the design, judge it in the composed screen rather than on an isolated component. Broad shadows from nearby surfaces can stack into a dark band, especially when a popover sits directly above a card, composer, or toolbar. Prefer a small set of elevation tokens, tighter near-contact shadows plus a softer low-alpha falloff, and surface/border contrast to do part of the separation work. Rebalance dark-mode shadows independently instead of carrying light-mode opacity and blur over unchanged. If a popover has a pointer or tail, keep its fill and border visually continuous with the panel.
+
 ## Show interaction, not only static pixels
 
 When an interaction is part of what the user is evaluating, prefer a short animated GIF preview in addition to a still screenshot when the environment can capture rendered frames.
@@ -85,6 +87,7 @@ Before calling a UI complete, check the rendered result for:
 - Consistent alignment and spacing rhythm; repeated values should come from tokens.
 - Deliberate typography with a small role-based scale and sensible line lengths.
 - Components that share geometry, states, radius, border/elevation, and icon treatment.
+- Elevation that still reads cleanly where surfaces overlap; shadows should not merge into black bands, halos, or muddy seams in light or dark mode.
 - Realistic content density instead of empty demo cards or decorative filler.
 - Responsive behavior at the requested breakpoints.
 - Hover, focus, loading, empty, success, warning, error, disabled, and destructive states where relevant.
